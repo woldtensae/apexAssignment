@@ -1,4 +1,23 @@
-	// pathname is contextRoot/path/path/ so we want to get [1] 
+
+
+$(
+		function(){
+			$("#addAppForm").hide();
+				$("#newBtn").click(function(){
+					$("#addAppForm").show();
+				});	
+				$("#cancel").click(function(){
+					$("#addAppForm").hide();
+				});	
+			}		
+);
+
+
+
+
+
+
+/*	// pathname is contextRoot/path/path/ so we want to get [1] 
     // that is where contextRoot is
 	// [0] has "" as a result of split 
 	var contextRoot = "/" + window.location.pathname.split( '/' )[1];
@@ -77,4 +96,4 @@ make_visible = function(id) {
 };
 
 
- 
+ */
