@@ -17,7 +17,6 @@ public class AppointmentController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String listAssignment(Model model) {
 	 		model.addAttribute("allAssignment", appointmentService.getAppointments());
-	 		//checking if i am in the right brach
 	 	return "appointment";	
       }
 }
