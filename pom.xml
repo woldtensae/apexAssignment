@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>apexAssignment</groupId>
-  <artifactId>ass.apex.com</artifactId>
+  <groupId>ass.apex</groupId>
+  <artifactId>App.apex.com</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   
@@ -23,9 +23,14 @@
 	        </plugin>
 	    </plugins>
 	</build>
-	
 	<dependencyManagement>
 		<dependencies>
+		  
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+		</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-framework-bom</artifactId>
@@ -49,8 +54,15 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
 	<dependencies>
+		<dependency>
+        	<groupId>org.springframework</groupId>
+        	<artifactId>spring-core</artifactId>
+    	</dependency>
+    	<dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-web</artifactId>
+    	</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -69,8 +81,24 @@
 			<artifactId>log4j</artifactId>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -96,7 +124,7 @@
 		<dependency>
 	    	<groupId>com.fasterxml.jackson.jaxrs</groupId>
 	    	<artifactId>jackson-jaxrs-base</artifactId>
-	    	<version>2.4.4</version>
+	    	
 		</dependency>
 		
 	</dependencies>

@@ -1,20 +1,22 @@
 package ass.apex.domain;
 
-import java.time.LocalDate;
+import java.sql.Date;
+import java.sql.Time;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-//@Entity
+@Entity
 public class Appointment {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private LocalDate dateTime;
+	private Date date;
+	private Time time;
 	private String description;
 	public Long getId() {
 		return id;
@@ -22,11 +24,18 @@ public class Appointment {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public LocalDate getDateTime() {
-		return dateTime;
+	public Date getDate() {
+		return date;
 	}
-	public void setDateTime(LocalDate dateTime) {
-		this.dateTime = dateTime;
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	public Time getTime() {
+		return time;
+	}
+	public void setTime(Time time) {
+		this.time = time;
 	}
 	public String getDescription() {
 		return description;

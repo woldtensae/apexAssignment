@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import ass.apex.service.AppointmentService;
 
+
 @Controller
 public class AppointmentController {
 	
@@ -16,7 +17,7 @@ public class AppointmentController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String listAssignment(Model model) {
-	 		model.addAttribute("allAssignment", appointmentService.getAppointments());
+	 		//model.addAttribute("allAssignment", appointmentService.getAppointments());
 	 	return "appointment";	
       }
 }

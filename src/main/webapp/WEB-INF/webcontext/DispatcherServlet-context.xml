@@ -10,10 +10,14 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 	 
-	 <context:component-scan base-package="ass.apex.controller" />
+	 	
+	 	
 	
-	 
-			
+	 <mvc:default-servlet-handler/>
+	<mvc:annotation-driven /> 
+	
+	 <context:component-scan base-package="ass.apex.controller" />
+	<mvc:resources location="/resources/" mapping="/resource/**" /> 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
