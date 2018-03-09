@@ -6,4 +6,5 @@ import ass.apex.domain.Appointment;
 
 public interface AppointmentService {
 	public List<Appointment> getAppointments();
+	public void saveAppointment(Appointment appointment);
 }

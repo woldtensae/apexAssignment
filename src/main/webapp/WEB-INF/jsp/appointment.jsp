@@ -17,21 +17,22 @@
 		<input type="button" value="New Appointment" /> 
 	</div>
 	<br />
-	<div id="addAppForm">
-		<form>
-			<input type="button" value="ADD" />
-			<input type="button" value="CANCEL" />
+	<div id="errors" ></div>
+	<div id="addAppForm" method="post">
+		<form id="appointmentForm" method="post">
+			<input type="button" value="ADD" id="add" />
+			<input type="button" value="CANCEL" id="cancel"/>
 			<p>
 				<label for="date">Date</label>
-				<input id="date" type="text" placeholder="Date" />
+				<input id="date" type="text" name="date" placeholder="Date" />
 			</p>
 			<p>
 				<label for="time">Time</label>
-				<input id="time" type="text" placeholder="Time" /> 
+				<input id="time" type="text" name="time" placeholder="Time" /> 
 			</p>
 			<p> 
 				<label for="date">Description</label>
-				<input id="description" type="text" placeholder="Description" />
+				<input id="description" type="text" name="description" placeholder="Description" />
 			</p>
 		
 		</form>
@@ -40,7 +41,23 @@
 		<input type="text" placeholder="Search" />
 		<input type="button" value="Search"> 
 	</form>
-	<div id="searchResult"></div>
+	<div id="searchResult">
+	<table>
+		<tr>
+			<th>Date </th>
+			<th>Time</th>
+			<th>Description</th>
+		</tr>
+		<c:forEach var="appointment" items="${allAppointments}" >
+      <tr>
+        <td><c:out value="${appointment.date}"></c:out></td>
+        <td><c:out value="${appointment.time}"></c:out></td>
+         <td><c:out value="${appointment.description}"></c:out></td>
+      </tr>	
+      </c:forEach>
+	</table>
+	
+	</div>
 </div>
 
 </body>
