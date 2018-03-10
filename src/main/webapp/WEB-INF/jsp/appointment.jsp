@@ -11,24 +11,23 @@
 	<script type="text/javascript" src="<spring:url value="/resource/js/ajax.js"/>"></script>
 </head>
 <body>
-<h1>Appointment page</h1>
+<div id="errors"></div>
 <div id="search">
-	<div id="newBtn">
-		<input type="button" value="New Appointment" /> 
+	<div >
+		<input id="newBtn" type="button" value="NEW" /> 
 	</div>
 	<br />
 	<div id="errors" ></div>
 	<div id="addAppForm" method="post">
 		<form id="appointmentForm" method="post">
-			<input type="button" value="ADD" id="add" />
 			<input type="button" value="CANCEL" id="cancel"/>
 			<p>
 				<label for="date">Date</label>
-				<input id="date" type="text" name="date" placeholder="Date" />
+				<input id="date" type="date" name="date" placeholder="Date" />
 			</p>
 			<p>
 				<label for="time">Time</label>
-				<input id="time" type="text" name="time" placeholder="Time" /> 
+				<input id="time" type="time" name="time" placeholder="Time" /> 
 			</p>
 			<p> 
 				<label for="date">Description</label>
@@ -38,7 +37,7 @@
 		</form>
 	</div>
 	<form>
-		<input id="searchTxt" type="text" placeholder="Search" />
+		<input id="searchTxt" type="date" placeholder="Search" />
 		<input id="searchBtn" type="button" value="Search"> 
 	</form>
 	<div id="searchResult">
@@ -51,11 +50,12 @@
 	</table>
 	
 	<table id="searchResultTable">
-		<tr id="newSearchedResult">
+		<tr>
 			<th>Date </th>   
 			<th>Time</th>
 			<th>Description</th>
 		</tr>
+		<tr id="newSearchedResult"></tr>
 	</table>
 	
 	</div>

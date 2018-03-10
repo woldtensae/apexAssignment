@@ -7,7 +7,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,17 +32,17 @@ public class AppointmentController {
 	
 	@RequestMapping(value = "/getAllAppointment", method = RequestMethod.GET)
     public @ResponseBody List<Appointment> getAllAppointments() {
-	 	return (List<Appointment>)appointmentService.getAppointments();	
+	 	return appointmentService.getAppointments();	
     }
 	
 	@RequestMapping(value = "/getAppointmentsByDate/{date}", method = RequestMethod.GET)
     public @ResponseBody List<Appointment> getAppointmentsByDate(@PathVariable("date") Date date) {
 		
-	 	return (List<Appointment>)appointmentService.getAllAppointmentsByDate(date);
+	 	return appointmentService.getAllAppointmentsByDate(date);
     }
 	
 	@RequestMapping(value="/add", method =RequestMethod.POST)
-	public @ResponseBody Appointment addAppointment(@Valid @RequestBody Appointment newAppointment, BindingResult result ) {
+	public @ResponseBody Appointment addAppointment(@Valid @RequestBody Appointment newAppointment) {
 		appointmentService.saveAppointment(newAppointment);
 		return newAppointment;
 	}
