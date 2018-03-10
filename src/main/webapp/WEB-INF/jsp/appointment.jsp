@@ -38,23 +38,24 @@
 		</form>
 	</div>
 	<form>
-		<input type="text" placeholder="Search" />
-		<input type="button" value="Search"> 
+		<input id="searchTxt" type="text" placeholder="Search" />
+		<input id="searchBtn" type="button" value="Search"> 
 	</form>
 	<div id="searchResult">
-	<table>
-		<tr>
-			<th>Date </th>
+	<table id="fullResultTable">
+		<tr id="newlyAddResult">
+			<th>Date </th>   
 			<th>Time</th>
 			<th>Description</th>
 		</tr>
-		<c:forEach var="appointment" items="${allAppointments}" >
-      <tr>
-        <td><c:out value="${appointment.date}"></c:out></td>
-        <td><c:out value="${appointment.time}"></c:out></td>
-         <td><c:out value="${appointment.description}"></c:out></td>
-      </tr>	
-      </c:forEach>
+	</table>
+	
+	<table id="searchResultTable">
+		<tr id="newSearchedResult">
+			<th>Date </th>   
+			<th>Time</th>
+			<th>Description</th>
+		</tr>
 	</table>
 	
 	</div>

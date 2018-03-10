@@ -1,5 +1,6 @@
 package ass.apex.serviceImpl;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,11 @@ public class AppointmentServiceImpl implements AppointmentService{
 	public void saveAppointment(Appointment appointment) {
 		appointmentRepository.save(appointment);
 		
+	}
+
+	@Override
+	public List<Appointment> getAllAppointmentsByDate(Date date) {
+		return appointmentRepository.findAllAppointmentsByDate(date);
 	}
 
 }
