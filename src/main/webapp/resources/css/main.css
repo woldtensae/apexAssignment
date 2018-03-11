@@ -1,0 +1,18 @@
+
+#errors {
+    color: red;
+    font-size: 9pt;	
+}
+.mainBody{
+	width: 70%;
+	margin-left:auto;
+	margin-top:100px;
+}
+table{
+	width: 70%;
+}
+th{
+	hieght:50px;
+}
+
+
