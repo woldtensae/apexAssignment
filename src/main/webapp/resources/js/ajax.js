@@ -2,17 +2,18 @@
 
 $(
 		function(){
-				
+				//hides the form initially
 			    $("#addAppForm").hide();
+			    //for displaying the initial all appointment result
 				$("#searchResultTable").hide();
 				
-					
+				//even handler for cancel 	
 				$("#cancel").click(function(){
 					$("#addAppForm").hide();
 					$("#newBtn").attr('value', 'NEW');
 				});
 				
-				
+				//root directory
 				var contextRoot = "/" + window.location.pathname.split( '/' )[1];
 				
 				//populating the appointment table dynamically from ajax call
@@ -21,7 +22,9 @@ $(
 							url: contextRoot + '/getAllAppointment',
 							dataType: "json",           // Accept header
 							success: function(response){
-								
+								//handling the result from the server side 
+								//dynamically attaching the result to the DOM
+								//iterating through all appointments initially 
 								for(i=0;i<response.length;i++){
 									$("#newlyAddResult").after('<tr><td> ' + response[i].date + '</td>'  
 										+	'<td> ' + response[i].time + '</td>'
@@ -31,7 +34,7 @@ $(
 								
 							},
 							error: function(errorObject ){
-								
+								alert(errorObject.responseJSON.errors(0));//// "non" Validation Error 
 					 		}
 						});
 				
@@ -45,7 +48,8 @@ $(
 						$("#addAppForm").show();
 					}
 					else{
-				
+							//capturing text box values
+							//creating JSON Object to be send to the server side						
 							var dataToSend = {
 									date: $("#date").val(),
 									time: $("#time").val(),
@@ -59,6 +63,7 @@ $(
 									data: JSON.stringify(dataToSend),
 									contentType: 'application/json',   // Sends - Content-type
 									success: function(response){
+										//will display the added appointment object without refreshing 
 										$("#newlyAddResult").after('<tr><td> ' + response.date + '</td>'  
 											+	'<td> ' + response.time + '</td>'
 											+	'<td> ' + response.description + '</td>'
@@ -66,6 +71,8 @@ $(
 										
 									},
 									error: function(errorObject ){
+										//check for the DomainError java object 
+										//if validation error it will be displayed here
 										if (errorObject.responseJSON.errorType == "ValidationError") {
 								 			$('#errors').html("");
 								 			$("#errors").append( '<H3 align="center"> Error(s)!! <H3>');                
@@ -112,7 +119,7 @@ $(
 							}
 						},
 						error: function(errorObject ){
-							
+							alert(errorObject.responseJSON.errors(0));
 				 		}
 		
 					});
