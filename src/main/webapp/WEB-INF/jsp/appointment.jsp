@@ -29,22 +29,26 @@
 	<br />
 	<div id="errors" style="color:blue;"></div> 
 	<div id="addAppForm" method="post">
+	<table>
 		<form id="appointmentForm" method="post">
-			<input type="button" value="CANCEL" id="cancel"/>
-			<p>
-				<label for="date">Date</label>
-				<input id="date" type="date" name="date" placeholder="Date" />
-			</p>
-			<p>
-				<label for="time">Time</label>
-				<input id="time" type="time" name="time" placeholder="Time" /> 
-			</p>
-			<p> 
-				<label for="date">Description</label>
-				<input id="description" type="text" name="description" placeholder="Description" />
-			</p>
+			<tr><td>
+			<input type="button" value="CANCEL" id="cancel"/></td></tr>
+			
+			<tr><td>
+				<label for="date">Date</label></td>
+				<td><input id="date" type="date" name="date" placeholder="Date" /></td></tr>
+			
+			<tr><td>
+				<label for="time">Time</label></td>
+				<td><input id="time" type="time" name="time" placeholder="Time" /> </td></tr>
+		
+			<tr><td> 
+				<label for="date">Description</label></td>
+				<td><input id="description" type="text" name="description" placeholder="Description" />
+			</td></tr>
 		
 		</form>
+		</table>
 	</div>
 	<form>
 		<input id="searchTxt" type="date" placeholder="Search" />
