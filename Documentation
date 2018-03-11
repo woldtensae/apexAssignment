@@ -1,0 +1,26 @@
+Documentation 
+
+ 1.	Technologies used
+		1.a Spring framework 
+		1.b Ajax 
+		1.c JSP
+		1.d Other frameworks like Jackson-jaxrs-base for converting java objects to and from json and hibernate validator
+ 2.    How to the project 
+		2.a Use STS/eclipse for better result 
+		2.b If STS no need to install server, you will get pivtol out of the box, but if you are using 
+		      Eclipse make sure to install apache or other server technology on your machine 
+		2.c  use MySql and create database name appointmentdb
+		2.d  run the project   	 
+ 
+
+ 
+ 3.	The program has 3 files 
+		1.a db.sql file which resides in src/main/resources class path, the applicationContext.xml 
+	        configuration files reads this file and execute the sql to initially populate our table.
+		1.b errorMessage.property file which also reside in src/main/resources class path, helps to          provide custom error messages (for localizing error messages)
+		1.c log4j.property file contains configuration file for logging
+ 4. All the functionalities are ajax calls to connect to back end (save and search appointments), all    ajax calls are located in src/main/webapp/resources/js path, and all the ajax calls are in a single file. 
+ 5.  configuration xml files 
+		3.a web configuration file src/main/webapp/WEB-INF/webcontext
+		3.b application configuration file src/main/webapp/WEB-INF
+	

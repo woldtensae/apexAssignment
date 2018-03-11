@@ -74,7 +74,8 @@ $(
 										//check for the DomainError java object 
 										//if validation error it will be displayed here
 										if (errorObject.responseJSON.errorType == "ValidationError") {
-								 			$('#errors').html("");
+								 			//
+											$('#errors').html("");
 								 			$("#errors").append( '<H3 align="center"> Error(s)!! <H3>');                
 								  			    $("#errors").append( '<p>');
 								  	
