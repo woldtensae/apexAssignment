@@ -1,6 +1,6 @@
 package ass.apex.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +10,8 @@ import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Appointment {
@@ -20,7 +21,7 @@ public class Appointment {
 	private Long id;
 	@NotNull
 	@Future
-	@DateTimeFormat(pattern = "yyyy-dd-MM")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date date;
 	@NotEmpty
 	private String time;

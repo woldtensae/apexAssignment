@@ -28,7 +28,7 @@ public class ExceptionController {
 	public DomainErrors handleException(MethodArgumentNotValidException exception) {
 		List<FieldError> fieldErrors = exception.getBindingResult().getFieldErrors();
 
-		System.out.println("this is aman"+fieldErrors);
+		System.out.println(fieldErrors);
 		DomainErrors errors = new DomainErrors();
 		errors.setErrorType("ValidationError");
 		for (FieldError fieldError : fieldErrors) {

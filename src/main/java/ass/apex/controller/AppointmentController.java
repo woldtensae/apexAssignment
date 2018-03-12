@@ -42,7 +42,7 @@ public class AppointmentController {
     }
 	
 	@RequestMapping(value="/add", method =RequestMethod.POST)
-	public @ResponseBody Appointment addAppointment(@Valid @RequestBody Appointment newAppointment) {
+	public @ResponseBody Appointment addAppointment(@Valid @RequestBody Appointment newAppointment, BindingResult bindingResult) {
 		appointmentService.saveAppointment(newAppointment);
 		return newAppointment;
 	}
