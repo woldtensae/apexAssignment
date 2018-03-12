@@ -28,7 +28,7 @@
 	</div>
 	<br />
 	<div id="errors" style="color:blue;"></div> 
-	<div id="addAppForm" method="post">
+	<div id="addAppForm">
 	<table>
 		<form id="appointmentForm" method="post">
 			<tr><td>
@@ -36,11 +36,11 @@
 			
 			<tr><td>
 				<label for="date">Date</label></td>
-				<td><input id="date" type="date" name="date" placeholder="Date" /></td></tr>
+				<td><input id="date" type="date" name="date" placeholder="MM-dd-yyyy" /></td></tr>
 			
 			<tr><td>
 				<label for="time">Time</label></td>
-				<td><input id="time" type="time" name="time" placeholder="Time" /> </td></tr>
+				<td><input id="time" type="time" name="time" placeholder="hh:mm" /> </td></tr>
 		
 			<tr><td> 
 				<label for="date">Description</label></td>

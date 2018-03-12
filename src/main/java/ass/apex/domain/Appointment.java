@@ -10,6 +10,7 @@ import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Appointment {
@@ -19,6 +20,7 @@ public class Appointment {
 	private Long id;
 	@NotNull
 	@Future
+	@DateTimeFormat(pattern = "yyyy-dd-MM")
 	private Date date;
 	@NotEmpty
 	private String time;

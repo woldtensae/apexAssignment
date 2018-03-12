@@ -15,9 +15,13 @@ th{
 	hieght:50px;
 }
 
-.addAppForm{
-	width:50%;
-	padding:5px;
+#addAppForm{
+	width:70%;
+	padding:10px;
+	margin:10px;
+	border-style:solid;
+	boarder-width:2px;
+	boarder-radius:10px;
 }
 
 
