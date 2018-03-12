@@ -36,11 +36,11 @@
 			
 			<tr><td>
 				<label for="date">Date</label></td>
-				<td><input id="date" type="date" name="date" placeholder="MM-dd-yyyy" /></td></tr>
+				<td><input id="date" type="date" name="date" placeholder="yyyy-MM-dd" /></td></tr>
 			
 			<tr><td>
 				<label for="time">Time</label></td>
-				<td><input id="time" type="time" name="time" placeholder="hh:mm" /> </td></tr>
+				<td><input id="time" type="time" name="time" placeholder="HH:mm:AM/PM" /> </td></tr>
 		
 			<tr><td> 
 				<label for="date">Description</label></td>
